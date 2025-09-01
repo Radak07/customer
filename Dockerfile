@@ -14,7 +14,7 @@ COPY . .
 RUN mvn clean install
 
 ########## Second Stage build ###########
-FROM amazoncorretto:17
+FROM amazoncorretto:17-alpine
 WORKDIR /java
 COPY --from=build1 /java/target/customer-1.0.1.jar .
 EXPOSE 8080
